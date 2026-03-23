@@ -2,9 +2,9 @@ import { useRef, useState, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const lines = [
-  { text: 'First closing line goes here.', delay: 0, cls: 'typewriter-line-1' },
-  { text: 'Second line with the key message.', delay: 2000, cls: 'typewriter-line-2' },
-  { text: "Let's make it happen.", delay: 4000, cls: 'typewriter-line-3' },
+  { text: 'Welcome to the team.', delay: 0, cls: 'typewriter-line-1' },
+  { text: "We're glad you're here.", delay: 2000, cls: 'typewriter-line-2' },
+  { text: "Let's build something great together.", delay: 4000, cls: 'typewriter-line-3' },
 ]
 
 export default function ClosingSlide() {
