@@ -252,28 +252,7 @@ body {
   pointer-events: none;
 }
 
-.title-swirl {
-  position: absolute;
-  right: -5%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 55%;
-  height: auto;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.title-swirl-path {
-  stroke-dasharray: 2600;
-  stroke-dashoffset: 2600;
-  animation: drawSwirl 2.4s cubic-bezier(0.65, 0, 0.35, 1) 0.6s forwards;
-}
-
-@keyframes drawSwirl {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
+/* swirl removed — using DecoCircle instead */
 
 .title-inner {
   display: flex;
@@ -1118,4 +1097,447 @@ body {
 .typewriter-word {
   display: inline-block;
   margin-right: 0.28em;
+}
+
+/* ─── Instructional Steps ──────────────────────────── */
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--inner-radius);
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: var(--card-shadow);
+}
+
+.step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'GT Alpina', serif;
+  font-weight: 100;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-body h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 2px;
+}
+
+.step-body p {
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+
+.cmd {
+  display: inline-block;
+  background: var(--gray-800);
+  color: #e5e7eb;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-top: 4px;
+  letter-spacing: 0.02em;
+}
+
+.url-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 12px;
+  color: var(--blue-600);
+  font-weight: 500;
+}
+
+.warning-card {
+  background: var(--amber-50);
+  border: 1px solid var(--amber-100);
+  border-radius: var(--inner-radius);
+  padding: 14px 20px;
+  margin-top: 14px;
+}
+
+.warning-card p {
+  font-size: 13px;
+  color: var(--amber-600);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.mini-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.mini-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--inner-radius);
+  padding: 16px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+}
+
+.mini-card-emoji {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.mini-card h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.mini-card p {
+  font-size: 11px;
+  color: var(--gray-400);
+  line-height: 1.4;
+}
+
+/* ─── Browser Mockup ───────────────────────────────── */
+.browser-mock {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--inner-radius);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--card-shadow);
+}
+
+.browser-chrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.browser-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.browser-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.browser-dots span:nth-child(1) { background: #ef4444; }
+.browser-dots span:nth-child(2) { background: #f59e0b; }
+.browser-dots span:nth-child(3) { background: #22c55e; }
+
+.browser-url {
+  flex: 1;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: var(--gray-500);
+  font-family: 'Geist', sans-serif;
+}
+
+.browser-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.browser-body-center {
+  align-items: center;
+  text-align: center;
+}
+
+/* ─── Terminal Mockup ──────────────────────────────── */
+.terminal-mock {
+  background: #1a1a2e;
+  border-radius: var(--inner-radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.terminal-chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  background: #16162a;
+}
+
+.terminal-chrome span:nth-child(1) { width: 8px; height: 8px; border-radius: 50%; background: #ef4444; }
+.terminal-chrome span:nth-child(2) { width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; }
+.terminal-chrome span:nth-child(3) { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
+.terminal-chrome-title {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.terminal-body {
+  padding: 14px 16px;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 12px;
+  color: #e5e7eb;
+  line-height: 1.7;
+}
+
+.terminal-prompt { color: #22c55e; }
+.terminal-flag { color: #60a5fa; }
+.terminal-string { color: #fbbf24; }
+.terminal-output { color: #6b7280; }
+.terminal-success { color: #22c55e; }
+.terminal-url { color: #60a5fa; text-decoration: underline; }
+
+/* ─── Mock Buttons ─────────────────────────────────── */
+.mock-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: default;
+  position: relative;
+}
+
+.mock-btn-green { background: #16a34a; color: white; }
+.mock-btn-black { background: var(--black); color: white; }
+.mock-btn-white { background: white; color: var(--black); border: 1px solid var(--gray-300); }
+.mock-btn-blue { background: var(--blue-600); color: white; }
+.mock-btn-github { background: #24292f; color: white; }
+
+.mock-btn-sm {
+  padding: 6px 16px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+/* ─── Click-Here Arrow ─────────────────────────────── */
+.click-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--amber-500);
+  font-weight: 700;
+  font-size: 12px;
+  animation: clickPulse 1.8s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+@keyframes clickPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.click-ring {
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--amber-500);
+  border-radius: 12px;
+  animation: ringPulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0; transform: scale(1.08); }
+}
+
+/* ─── Keyboard Key ─────────────────────────────────── */
+.kbd {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-300);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  color: var(--gray-700);
+}
+
+/* ─── Menu Mockup ──────────────────────────────────── */
+.menu-mock {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 4px 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  width: fit-content;
+  font-size: 13px;
+}
+
+.menu-item {
+  padding: 5px 32px 5px 12px;
+  color: var(--gray-600);
+  white-space: nowrap;
+}
+
+.menu-item-active {
+  background: var(--blue-50);
+  color: var(--blue-600);
+  font-weight: 600;
+  position: relative;
+}
+
+.menu-sep {
+  height: 1px;
+  background: var(--gray-100);
+  margin: 4px 0;
+}
+
+/* ─── Form Mockup ──────────────────────────────────── */
+.form-mock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.form-field {
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--gray-400);
+  background: var(--white);
+}
+
+/* ─── Visual Guide Layout ──────────────────────────── */
+.guide-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.guide-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.guide-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-400);
+  margin-bottom: 4px;
+}
+
+/* ─── Team Layout ──────────────────────────────────── */
+.team-leadership {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.team-lead-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--inner-radius);
+  padding: 16px 12px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-lead-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid var(--gray-100);
+}
+
+.team-lead-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.3;
+}
+
+.team-lead-role {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--blue-600);
+  margin: 2px 0 6px;
+}
+
+.team-lead-bio {
+  font-size: 10px;
+  color: var(--gray-500);
+  line-height: 1.4;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team-member-photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 6px;
+  border: 2px solid var(--gray-100);
+}
+
+.team-member-name {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 1.3;
+}
+
+.team-member-role {
+  font-size: 9px;
+  color: var(--gray-400);
+  line-height: 1.3;
 }

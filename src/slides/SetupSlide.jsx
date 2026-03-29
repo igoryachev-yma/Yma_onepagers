@@ -24,14 +24,17 @@ const tools = [
     ),
   },
   {
-    name: 'Trello',
-    desc: 'Task tracking & project boards',
+    name: 'Linear',
+    desc: 'Main task manager & project tracking',
     color: 'card-icon-amber',
     icon: (
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-        <rect x="2.5" y="2.5" width="13" height="13" rx="2" stroke="currentColor" strokeWidth="1.5" />
-        <rect x="4.5" y="4.5" width="3.5" height="7" rx="1" stroke="currentColor" strokeWidth="1.2" />
-        <rect x="10" y="4.5" width="3.5" height="5" rx="1" stroke="currentColor" strokeWidth="1.2" />
+        <path d="M2.47 10.39a7.5 7.5 0 005.14 5.14L2.47 10.39z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M2.04 8.25a7.5 7.5 0 007.71 7.71" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M3.22 5.72a7.5 7.5 0 009.06 9.06" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M5.72 3.22a7.5 7.5 0 009.06 9.06" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M8.25 2.04a7.5 7.5 0 007.71 7.71" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M10.39 2.47a7.5 7.5 0 005.14 5.14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
   },

@@ -1,69 +1,79 @@
-import A, { scaleIn } from '../components/A'
+import A, { scaleIn, fadeIn } from '../components/A'
 
-const contacts = [
+const leadership = [
   {
-    role: 'General Questions & Access',
-    name: 'Sergei',
-    desc: 'Your go-to person for tool access, accounts setup, Slack, GitLab, and any general onboarding questions.',
-    color: 'card-icon-blue',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-        <circle cx="9" cy="6" r="3" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M3 15.75c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
+    name: 'Andrey Perfiliev, MD',
+    role: 'CEO & Co-founder',
+    bio: '15+ years in med-tech and healthcare leadership, AI, genomics, and molecular oncology.',
+    photo: '/team/andrey-perfilyev.jpg',
   },
   {
-    role: 'Your Direct Manager',
-    name: 'Ask on Day 1',
-    desc: 'Make sure you know who your direct manager is — they will guide your goals, priorities, and growth path.',
-    color: 'card-icon-green',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-        <path d="M9 2v5l3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="9" cy="9" r="7" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
+    name: 'Sergei Savvov',
+    role: 'CTO & Co-Founder',
+    bio: '10+ years in data science in med-tech, building AI applications and predictive models.',
+    photo: '/team/sergei-savvov.jpg',
   },
   {
-    role: 'Development Team',
-    name: 'If applicable',
-    desc: 'If you are joining the dev team, contact Sergei to be added to sprint planning and technical discussions.',
-    color: 'card-icon-amber',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-        <path d="M6 6l-3 3 3 3M12 6l3 3-3 3M10 4l-2 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    name: 'Nastya Popova, MA',
+    role: 'CXO',
+    bio: '20+ years interpreting tech-to-human, experience designer, 10+ years in comms & marketing.',
+    photo: '/team/nastya-popova.jpg',
   },
+  {
+    name: 'Viktoria Kushpelev',
+    role: 'Chief of Ops & Legal',
+    bio: '17 years in M&A, VC, and legal, 7 years leading global healthcare projects. Stanford AI in Healthcare.',
+    photo: '/team/vika-kushpeleva.jpg',
+  },
+  {
+    name: 'Yury Poteshkin, MD, PhD',
+    role: 'Head of Medical Analytics',
+    bio: '15+ years in medical science, practicing endocrinologist, researcher, analyst, and medical writer.',
+    photo: '/team/yuriy-poteshkin.jpg',
+  },
+]
+
+const team = [
+  { name: 'Philip Loginov', role: 'Head of Sales', photo: '/team/philip-loginov.jpg' },
+  { name: 'Ilya Marinov, PhD', role: 'Head of Partnerships', photo: '/team/ilya-marinov.jpg' },
+  { name: 'Nika Abduragimova', role: 'Creative Producer', photo: '/team/nika-abduragimova.jpg' },
+  { name: 'Viktoriia Palagina', role: 'Product Manager', photo: '/team/viktoriia-palagina.jpg' },
+  { name: 'Daniil Pimanov, PhD', role: 'LLM Engineer', photo: '/team/daniil-pimanov.jpg' },
+  { name: 'Vasilii Kostrubov', role: 'Backend Developer', photo: '/team/vasilii-kostrubov.jpg' },
+  { name: 'Alexei Dragun', role: 'QA Engineer', photo: '/team/alexei-dragun.jpg' },
+  { name: 'Omar Ospanov', role: 'Jr. Content Engineer', photo: '/team/omar-ospanov.jpg' },
 ]
 
 export default function TeamSlide() {
   return (
     <section className="slide">
-      <div className="slide-inner">
-        <A><p className="tag">The Team</p></A>
-        <A d={1}><h2>Key Contacts</h2></A>
-        <A d={2}><p className="section-subtitle">Who to reach out to when you need help</p></A>
+      <div className="slide-inner slide-inner-wide">
+        <A><p className="tag">People Who Build Yma</p></A>
+        <A d={1}><h2>Meet the Team</h2></A>
 
-        <div className="card-grid card-grid-3">
-          {contacts.map((c, i) => (
-            <A key={i} v={scaleIn} d={i + 3} className="card">
-              <div className={`card-icon ${c.color}`}>{c.icon}</div>
-              <div className="card-header">
-                <h3>{c.role}</h3>
+        <div className="team-leadership">
+          {leadership.map((p, i) => (
+            <A key={i} v={scaleIn} d={i + 2} className="team-lead-card">
+              <img src={p.photo} alt={p.name} className="team-lead-photo" />
+              <div>
+                <h3 className="team-lead-name">{p.name}</h3>
+                <p className="team-lead-role">{p.role}</p>
+                <p className="team-lead-bio">{p.bio}</p>
               </div>
-              <p style={{ fontWeight: 600, color: 'var(--black)', marginBottom: 4 }}>{c.name}</p>
-              <p>{c.desc}</p>
             </A>
           ))}
         </div>
 
-        <A d={7} className="callout-stat">
-          <span className="callout-stat-label">Explore</span>
-          <p className="callout-stat-text">
-            Check out the <span className="hl">Company Home</span> in Notion to learn about the full team structure and current projects.
-          </p>
+        <A v={fadeIn} d={8}>
+          <div className="team-grid">
+            {team.map((p, i) => (
+              <div key={i} className="team-member">
+                <img src={p.photo} alt={p.name} className="team-member-photo" />
+                <span className="team-member-name">{p.name}</span>
+                <span className="team-member-role">{p.role}</span>
+              </div>
+            ))}
+          </div>
         </A>
       </div>
     </section>

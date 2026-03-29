@@ -4,7 +4,7 @@ const steps = [
   {
     date: 'Day 1',
     title: 'Get Access',
-    desc: 'Set up Google, Slack, Trello, Notion, and GitLab. Enable 2FA. Add your avatar and role description.',
+    desc: 'Set up Google, Slack, Linear, Notion, and GitLab. Enable 2FA. Add your avatar and role description.',
     color: '#3b82f6',
   },
   {
